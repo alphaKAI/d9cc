@@ -1,0 +1,9 @@
+{
+	"name": "d9cc",
+	"authors": [
+		"Akihiro Shoji"
+	],
+	"description": "Tiny C Compiler in D",
+	"copyright": "Copyright © 2018, Akihiro Shoji",
+	"license": "MIT"
+}
