@@ -395,7 +395,7 @@ private immutable(char)* string_literal(immutable(char)* p) {
     sb ~= c;
   }
 
-  t.str = sb;
+  t.str = sb ~ '\0';
   t.end = p + 1;
   return p + 1;
 }

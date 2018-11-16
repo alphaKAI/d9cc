@@ -215,7 +215,7 @@ void emit_code(Function fn) {
 }
 
 private string backslash_escape(string s, int len) {
-  static char[256] escaped = '\0';
+  static char[256] escaped = 0;
   escaped['\b'] = 'b';
   escaped['\f'] = 'f';
   escaped['\n'] = 'n';
@@ -228,7 +228,7 @@ private string backslash_escape(string s, int len) {
   string sb;
   foreach (ubyte c; s[0 .. len]) {
     char esc = escaped[c];
-    if (esc != '\0') {
+    if (esc != 0) {
       sb ~= '\\';
       sb ~= esc;
     } else if (isgraph(c) || c == ' ') {
