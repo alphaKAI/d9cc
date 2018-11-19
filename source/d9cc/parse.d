@@ -179,12 +179,8 @@ static this() {
 
 private Var find_var(string name) {
   for (Env e = env; e !is null; e = e.prev) {
-    Var var;
     if (name in e.vars) {
-      var = e.vars[name];
-    }
-    if (var !is null) {
-      return var;
+      return e.vars[name];
     }
   }
   return null;
@@ -192,12 +188,8 @@ private Var find_var(string name) {
 
 private Type find_typedef(string name) {
   for (Env e = env; e !is null; e = e.prev) {
-    Type ty;
     if (name in e.typedefs) {
-      ty = e.typedefs[name];
-    }
-    if (ty !is null) {
-      return ty;
+      return e.typedefs[name];
     }
   }
   return null;
@@ -205,12 +197,8 @@ private Type find_typedef(string name) {
 
 private Type find_tag(string name) {
   for (Env e = env; e !is null; e = e.prev) {
-    Type ty;
     if (name in e.tags) {
-      ty = e.tags[name];
-    }
-    if (ty !is null) {
-      return ty;
+      return e.tags[name];
     }
   }
   return null;
